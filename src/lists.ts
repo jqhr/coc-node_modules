@@ -5,7 +5,7 @@ import * as path from 'path';
 interface NodeModulesInfo {
   name: string;
   version: string;
-  packaePath: string;
+  path: string;
 }
 
 export default class NodeModulesList extends BasicList {
@@ -17,7 +17,8 @@ export default class NodeModulesList extends BasicList {
 
     this.addAction('open', (item) => {
       // TODO: open CocList files -folder  <25-12-22, yourname> //
-      nvim.command(`CocList files -folder ${item.data.path}`);
+      console.debug('open', JSON.stringify(item), item.data.path);
+      nvim.command(`CocList files ${item.data.path}`);
     });
   }
 
@@ -27,7 +28,7 @@ export default class NodeModulesList extends BasicList {
       return {
         name: packageJson.name,
         version: packageJson.version,
-        packaePath,
+        path: packaePath,
       };
     } catch (e) {
       /* handle error */
