@@ -1,6 +1,6 @@
 {
   "name": "coc-node_modules",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "coc extensions for node_modules",
   "author": "jqhr <tliyh@qq.com>",
   "license": "MIT",
